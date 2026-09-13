@@ -1,15 +1,15 @@
-<p align="center">
+﻿<p align="center">
   <img src="assets/logo.png" width="120" alt="plg_system_fgofflineipwhitelist logo">
 </p>
 
 <h1 align="center">FG Offline IP Whitelist plugin for Joomla</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/ferino75/plg_system_fgofflineipwhitelist?color=FF6B4A&label=release" alt="Latest release">
+  <img src="https://img.shields.io/github/v/release/FGcodework/plg_system_fgofflineipwhitelist?color=FF6B4A&label=release" alt="Latest release">
   <img src="https://img.shields.io/badge/Joomla-4%20%7C%205%20%7C%206-1A6877?logo=joomla&logoColor=white" alt="Joomla 4 | 5 | 6">
   <img src="https://img.shields.io/badge/PHP-8.0%2B-green" alt="PHP 8.0+">
   <img src="https://img.shields.io/badge/license-GPL--2.0-105060" alt="License: GPL-2.0">
-  <img src="https://img.shields.io/github/downloads/ferino75/plg_system_fgofflineipwhitelist/total?color=FF6B4A" alt="Downloads">
+  <img src="https://img.shields.io/github/downloads/FGcodework/plg_system_fgofflineipwhitelist/total?color=FF6B4A" alt="Downloads">
 </p>
 
 A Joomla system plugin that grants **frontend access during Site Offline mode** to a
@@ -48,7 +48,7 @@ screen is skipped for you, while every other visitor still sees it.
 
 ## Installation
 
-1. Download the latest release ZIP from the [Releases](https://github.com/ferino75/plg_system_fgofflineipwhitelist/releases) page.
+1. Download the latest release ZIP from the [Releases](https://github.com/FGcodework/plg_system_fgofflineipwhitelist/releases) page.
 2. In the Joomla administrator, go to **System → Manage → Install** and upload the ZIP.
 3. Enable the plugin under **System → Manage → Plugins → System - FG Offline IP Whitelist**.
 
