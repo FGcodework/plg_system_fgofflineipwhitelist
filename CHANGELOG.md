@@ -2,6 +2,25 @@
 
 All notable changes to this plugin are documented here.
 
+## [1.1.4] - 2026-09-25
+### Added
+- New **"Plugin"** info tab (an unlabeled fieldset containing only a `note` field),
+  matching the rest of the FG series: shows a short "Support this plugin" note with
+  a Ko-fi link and a link to the FG extensions overview (fgcodework.github.io). All
+  existing settings moved to a new, explicitly labelled **"Settings"** tab - nothing
+  about their values, defaults, or behaviour changed, only which tab they render under.
+- `<inlinehelp button="show"/>` added to the manifest, so the Settings tab's field
+  descriptions are hidden by default and toggled with Joomla's standard "Toggle Inline
+  Help" button, the same way Joomla's own core extensions behave (the Plugin tab's
+  support note is a `note` field and is unaffected - it always stays visible).
+### Changed
+- Repository, update server, and all release/download URLs moved from `ferino75` to
+  the `FGcodework` GitHub organisation (following the account rename already reflected
+  across the rest of the FG series) - `updates.xml`, the manifest's `<updateservers>`,
+  and README badges/links all updated accordingly. Existing installs pick this up
+  automatically on their next update check.
+- Added `<authorUrl>https://github.com/FGcodework</authorUrl>` to the manifest.
+
 ## [1.1.3] - 2026-08-10
 ### Changed
 - Added `declare(strict_types=1);` to all four PHP files (`Extension\Fgofflineipwhitelist`,

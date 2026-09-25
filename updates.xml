@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <updates>
     <update>
         <name>System - FG Offline IP Whitelist</name>
@@ -7,10 +7,10 @@
         <type>plugin</type>
         <folder>system</folder>
         <client>site</client>
-        <version>1.1.3</version>
+        <version>1.1.4</version>
         <infourl title="plg_system_fgofflineipwhitelist">https://github.com/FGcodework/plg_system_fgofflineipwhitelist</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/FGcodework/plg_system_fgofflineipwhitelist/releases/download/v1.1.3/plg_system_fgofflineipwhitelist_v1.1.3.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/FGcodework/plg_system_fgofflineipwhitelist/releases/download/v1.1.4/plg_system_fgofflineipwhitelist_v1.1.4.zip</downloadurl>
         </downloads>
         <tags>
             <tag>stable</tag>

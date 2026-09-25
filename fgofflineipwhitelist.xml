@@ -1,11 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" group="system" method="upgrade">
     <name>PLG_SYSTEM_FGOFFLINEIPWHITELIST</name>
     <author>FG</author>
+    <authorUrl>https://github.com/FGcodework</authorUrl>
     <creationDate>2026-08-10</creationDate>
     <copyright>(C) FG</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <version>1.1.3</version>
+    <version>1.1.4</version>
     <description>PLG_SYSTEM_FGOFFLINEIPWHITELIST_XML_DESCRIPTION</description>
     <namespace path="src">FG\Plugin\System\Fgofflineipwhitelist</namespace>
     <php_minimum>8.0.0</php_minimum>
@@ -29,8 +30,18 @@
     </languages>
 
     <config>
+        <inlinehelp button="show"/>
         <fields name="params" addfieldpath="/plugins/system/fgofflineipwhitelist/fields">
             <fieldset name="basic">
+                <field
+                    name="support_note"
+                    type="note"
+                    label="PLG_SYSTEM_FGOFFLINEIPWHITELIST_FIELD_SUPPORT_LABEL"
+                    description="PLG_SYSTEM_FGOFFLINEIPWHITELIST_FIELD_SUPPORT_DESC"
+                />
+            </fieldset>
+
+            <fieldset name="settings" label="PLG_SYSTEM_FGOFFLINEIPWHITELIST_FIELDSET_SETTINGS">
                 <field
                     name="detected_ip"
                     type="fgclientip"
