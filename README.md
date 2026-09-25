@@ -5,16 +5,13 @@
 <h1 align="center">System - FG Offline IP Whitelist</h1>
 
 <p align="center">
+  <img src="https://img.shields.io/github/v/release/FGcodework/plg_system_fgofflineipwhitelist?color=FF6B4A&label=release" alt="Latest release">
   <img src="https://img.shields.io/badge/Joomla-4%20%7C%205%20%7C%206-1A6877?logo=joomla&logoColor=white" alt="Joomla 4 | 5 | 6">
   <img src="https://img.shields.io/badge/license-GPL--2.0-105060" alt="License: GPL-2.0">
-  <img src="https://img.shields.io/github/v/release/FGcodework/plg_system_fgofflineipwhitelist?color=FF6B4A&label=release" alt="Latest release">
   <img src="https://img.shields.io/github/downloads/FGcodework/plg_system_fgofflineipwhitelist/total?color=FF6B4A" alt="Downloads">
   <a href="https://ko-fi.com/fgcodework"><img src="https://img.shields.io/badge/support-Ko--fi-FF6061.svg?logo=ko-fi&logoColor=white" alt="Support on Ko-fi"></a>
 </p>
 
-<p align="center">
-  <img src="assets/banner.png" alt="System - FG Offline IP Whitelist banner" width="100%">
-</p>
 
 A Joomla system plugin that grants **frontend access during Site Offline mode** to a
 configurable list of IP addresses — without needing a Super User login or lowering the
@@ -91,7 +88,7 @@ This plugin is free, open source, and always will be - no feature is locked behi
 a paywall. If it has saved you time, a one-off tip on Ko-fi is welcome, but entirely
 optional.
 
-[![ko-fi](https://storage.ko-fi.com/cdn/kofi3.png?v=4)](https://ko-fi.com/fgcodework)
+<a href="https://ko-fi.com/fgcodework"><img src="https://storage.ko-fi.com/cdn/kofi3.png?v=4" alt="ko-fi" width="180"></a>
 
 ## License
 
