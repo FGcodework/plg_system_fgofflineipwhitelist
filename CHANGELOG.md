@@ -2,6 +2,23 @@
 
 All notable changes to this plugin are documented here.
 
+## [1.1.5] - 2026-09-28
+### Changed
+- "Support this plugin" note on the Plugin tab redesigned to match the rest of the FG
+  series: a short intro line, the official Ko-fi button image, and an Atum-styled
+  "More FG Extensions" button linking to fgcodework.github.io, laid out side by side.
+  A scoped `<style>` rule suppresses Joomla's external-link icon on the Ko-fi image
+  link. All HTML attributes use single quotes so they never clash with the ini value's
+  own double quotes.
+- The note no longer has a label heading: the `label` attribute was removed from the
+  field and the `..._FIELD_SUPPORT_LABEL` key dropped from both language files
+  (instead of leaving an empty `KEY=""` translation, which the JED checker flags as
+  "Empty translation string").
+### Added
+- `.gitattributes` forcing LF line endings for `.ini` files (`*.ini text eol=lf`), so a
+  Windows checkout with `core.autocrlf` doesn't turn them into CRLF - also a JED
+  checker requirement.
+
 ## [1.1.4] - 2026-09-25
 ### Added
 - New **"Plugin"** info tab (an unlabeled fieldset containing only a `note` field),
