@@ -2,6 +2,27 @@
 
 All notable changes to this plugin are documented here.
 
+## [1.1.6] - 2026-09-30
+### Fixed
+- JED checker (JAMSS anti-malware scan) flagged `src/Support/IpResolver.php`, line 138,
+  pattern #21 "at least two characters in hexadecimal or octal notation": the IPv4-mapped
+  IPv6 prefix was written as a string of twelve `\x..` escapes. It is now derived from a
+  literal address (`inet_pton('::ffff:0.0.0.0')`, first 12 bytes, computed once) in a small
+  `mappedPrefix()` helper.
+- Reproducing the scan locally with the original JAMSS patterns showed a second, unreported
+  false positive in the same file (pattern #17, "multiple encoded ... obfuscated code"):
+  that pattern matches function names as case-insensitive substrings, and the method name
+  `resolveSingleValueHeader` contains "eVal", which together with `str_replace` looked like
+  `eval` + string decoding. The method is renamed `resolveSingleHeader` and `parseList()` now
+  splits on `[\r\n,]+` directly instead of calling `str_replace` first.
+- No behaviour change. Verified by running the old (1.1.5) and new `IpResolver` on 325,650
+  IP/entry combinations (plain and IPv4-mapped IPv6, look-alike prefixes, CIDR lengths
+  -1..200, invalid input): byte-identical output, plus 9 `parseList` edge cases.
+### Added
+- `tests/ipresolver.test.php` (assertions incl. look-alike prefixes that must NOT be
+  treated as IPv4), `tests/jamss_check.sh` (local JAMSS run against the installable
+  package layout) and `tests/README.md`. The package scan now reports 0 hits.
+
 ## [1.1.5] - 2026-09-28
 ### Changed
 - "Support this plugin" note on the Plugin tab redesigned to match the rest of the FG
