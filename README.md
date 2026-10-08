@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" width="120" alt="plg_system_fgofflineipwhitelist logo">
+  <img src="assets/logo.webp" width="120" alt="plg_system_fgofflineipwhitelist logo">
 </p>
 
 <h1 align="center">FG Offline IP Whitelist</h1>
