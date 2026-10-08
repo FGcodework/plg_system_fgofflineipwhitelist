@@ -2,6 +2,63 @@
 
 All notable changes to this plugin are documented here.
 
+## [1.1.6] - 2026-09-30
+### Fixed
+- JED checker (JAMSS anti-malware scan) flagged `src/Support/IpResolver.php`, line 138,
+  pattern #21 "at least two characters in hexadecimal or octal notation": the IPv4-mapped
+  IPv6 prefix was written as a string of twelve `\x..` escapes. It is now derived from a
+  literal address (`inet_pton('::ffff:0.0.0.0')`, first 12 bytes, computed once) in a small
+  `mappedPrefix()` helper.
+- Reproducing the scan locally with the original JAMSS patterns showed a second, unreported
+  false positive in the same file (pattern #17, "multiple encoded ... obfuscated code"):
+  that pattern matches function names as case-insensitive substrings, and the method name
+  `resolveSingleValueHeader` contains "eVal", which together with `str_replace` looked like
+  `eval` + string decoding. The method is renamed `resolveSingleHeader` and `parseList()` now
+  splits on `[\r\n,]+` directly instead of calling `str_replace` first.
+- No behaviour change. Verified by running the old (1.1.5) and new `IpResolver` on 325,650
+  IP/entry combinations (plain and IPv4-mapped IPv6, look-alike prefixes, CIDR lengths
+  -1..200, invalid input): byte-identical output, plus 9 `parseList` edge cases.
+### Added
+- `tests/ipresolver.test.php` (assertions incl. look-alike prefixes that must NOT be
+  treated as IPv4), `tests/jamss_check.sh` (local JAMSS run against the installable
+  package layout) and `tests/README.md`. The package scan now reports 0 hits.
+
+## [1.1.5] - 2026-09-28
+### Changed
+- "Support this plugin" note on the Plugin tab redesigned to match the rest of the FG
+  series: a short intro line, the official Ko-fi button image, and an Atum-styled
+  "More FG Extensions" button linking to fgcodework.github.io, laid out side by side.
+  A scoped `<style>` rule suppresses Joomla's external-link icon on the Ko-fi image
+  link. All HTML attributes use single quotes so they never clash with the ini value's
+  own double quotes.
+- The note no longer has a label heading: the `label` attribute was removed from the
+  field and the `..._FIELD_SUPPORT_LABEL` key dropped from both language files
+  (instead of leaving an empty `KEY=""` translation, which the JED checker flags as
+  "Empty translation string").
+### Added
+- `.gitattributes` forcing LF line endings for `.ini` files (`*.ini text eol=lf`), so a
+  Windows checkout with `core.autocrlf` doesn't turn them into CRLF - also a JED
+  checker requirement.
+
+## [1.1.4] - 2026-09-25
+### Added
+- New **"Plugin"** info tab (an unlabeled fieldset containing only a `note` field),
+  matching the rest of the FG series: shows a short "Support this plugin" note with
+  a Ko-fi link and a link to the FG extensions overview (fgcodework.github.io). All
+  existing settings moved to a new, explicitly labelled **"Settings"** tab - nothing
+  about their values, defaults, or behaviour changed, only which tab they render under.
+- `<inlinehelp button="show"/>` added to the manifest, so the Settings tab's field
+  descriptions are hidden by default and toggled with Joomla's standard "Toggle Inline
+  Help" button, the same way Joomla's own core extensions behave (the Plugin tab's
+  support note is a `note` field and is unaffected - it always stays visible).
+### Changed
+- Repository, update server, and all release/download URLs moved from `ferino75` to
+  the `FGcodework` GitHub organisation (following the account rename already reflected
+  across the rest of the FG series) - `updates.xml`, the manifest's `<updateservers>`,
+  and README badges/links all updated accordingly. Existing installs pick this up
+  automatically on their next update check.
+- Added `<authorUrl>https://github.com/FGcodework</authorUrl>` to the manifest.
+
 ## [1.1.3] - 2026-08-10
 ### Changed
 - Added `declare(strict_types=1);` to all four PHP files (`Extension\Fgofflineipwhitelist`,
